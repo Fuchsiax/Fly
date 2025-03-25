@@ -1,0 +1,288 @@
+﻿<UserControl x:Class="Fly2_0.MVVM.View.RegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Fly2_0.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="810" d:DesignWidth="1210">
+    <ScrollViewer >
+        <Grid  Height="1232">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="1091*"/>
+                <ColumnDefinition Width="45*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.ColumnSpan="3">
+                <TextBlock Text="Регистрация"
+                           FontSize="30"
+                           FontWeight="DemiBold"
+                           Foreground="#FF7579D3"
+                           Margin="44,10,0,0"
+                           Height="43"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           Width="175" />
+                <TextBlock x:Name="ТексРегистраци"
+                           Margin="0,20,86,0"
+                           FontSize="17"
+                           Height="70"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           Width="1063"
+                           TextWrapping="Wrap"
+                           TextAlignment="Justify">
+                    Обращаем Ваше внимание на необходимость заполнения регистрационной анкеты в точном соответствии с паспортными данными.
+                    При изменении паспортных данных просим Вас известить об этом FlyingHawk незамедлительно.
+                    Несоответствие регистрационных данных паспортным может служить причной несвоевременного зачисления баллов на счет участника.
+                </TextBlock>
+                <Border CornerRadius="20"
+                        Background="#FFECF1FA"
+                        Margin="0,20,86,0"
+                        HorizontalAlignment="Right"
+                        Width="1062"
+                        Height="200"
+                        VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Личные данные"
+                                   FontSize="22"
+                                   Foreground="Black"
+                                   FontWeight="DemiBold"
+                                   HorizontalAlignment="Left"
+                                   Width="168"
+                                   Height="29"
+                                   VerticalAlignment="Top"
+                                   Margin="20,10,0,0"/>
+                        <StackPanel Orientation="Horizontal"  Margin="20,10,0,0">
+                            <RadioButton Content="Мужской"
+                                         x:Name="ПолМ"
+                                         FontSize="19"
+                                         Cursor="Hand"
+                                         HorizontalAlignment="Right"
+                                         Width="101"
+                                         Height="28"
+                                         GroupName="Пол"
+                                         VerticalAlignment="Top"
+                                         Margin="0,0,20,0"/>
+                            <RadioButton Content="Женский"
+                                         GroupName="Пол"
+                                         x:Name="ПолЖ"
+                                         FontSize="19"
+                                         Cursor="Hand"
+                                         HorizontalAlignment="Right"   
+                                         Width="154"
+                                         Height="28"
+                                         VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                            <TextBox 
+                                 x:Name="SurnameU"
+                                 FontSize="20"
+                                 HorizontalAlignment="Left"
+                                 Width="300"
+                                 Height="50" 
+                                 VerticalAlignment="Top"
+                                 Tag="Фамилия"         
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Margin="0,0,50,0">
+                            </TextBox>
+                            <TextBox 
+                                 x:Name="NameU"
+                                 FontSize="20"
+                                 HorizontalAlignment="Left"
+                                 Width="300"
+                                 Height="50" 
+                                 VerticalAlignment="Top"
+                                 Tag="Имя"       
+                                 Margin="0,0,50,0"
+                            
+                                 Style="{StaticResource RoundedTextBoxStyle}"/>
+
+                            <DatePicker  
+                                 x:Name="DateOfBirthU"
+                                 FontSize="20"
+                                 HorizontalAlignment="Left"
+                                 Width="300"
+                                 Height="50" 
+                                 VerticalAlignment="Top" 
+                                 Padding="10,0,10,0"
+                                Style="{DynamicResource DatePickerStyle}" 
+                                CalendarOpened="DateOfBirthU_CalendarOpened"
+                                 ></DatePicker>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="латинскими буквами, как в паспорте"
+                                       FontSize="14" 
+                                       HorizontalAlignment="Right"
+                                       Width="228"
+                                       Height="28"
+                                       VerticalAlignment="Top"
+                                       Margin="20,5,0,0"/>
+                            <TextBlock Text="латинскими буквами, как в паспорте"
+                                       FontSize="14"
+                                       HorizontalAlignment="Right"
+                                       Width="237"
+                                       Height="28"
+                                       VerticalAlignment="Top"
+                                       Margin="125,5,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="20"
+                        Background="#FFECF1FA"
+                        Margin="0,40,86,0"
+                        Height="150"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Width="1063">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Паспортные данные"
+                               FontSize="22"
+                               Foreground="Black"
+                               FontWeight="DemiBold"
+                               Margin="20,10,0,0"
+                               HorizontalAlignment="Left" 
+                               Width="212"
+                               Height="29"
+                               VerticalAlignment="Top"/>
+                        <StackPanel Orientation="Horizontal" Margin="20,20,0,0">
+                            <TextBox 
+                                 x:Name="Citizenship"
+                                 Tag="Гражданство"         
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 FontSize="20" 
+                                 HorizontalAlignment="Left"
+                                 Width="300" 
+                                 Height="50" 
+                                 VerticalAlignment="Top"
+                                 Margin="0,0,50,0"/>
+                            <TextBox 
+                                 x:Name="Passport"
+                                 Tag="Серия и номер паспорта"         
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Margin="0,0,50,0"
+                                 FontSize="20"
+                                 HorizontalAlignment="Left"
+                                 Width="300" 
+                                 Height="50"
+                                 VerticalAlignment="Top"/>
+                            <DatePicker x:Name="ValidityU"
+                                        FontSize="20"
+                                        Width="300" 
+                                        Height="50"
+                                        Style="{DynamicResource DatePickerStyle}"
+                                        Padding="10,0,10,0"
+                                        CalendarOpened="ValidityU_CalendarOpened"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="20"
+                        Background="#FFECF1FA" 
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="1063"
+                        Height="225"
+                        Margin="44,40,0,0" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Адрес"
+                                   FontSize="22"
+                                   Foreground="Black"
+                                   FontWeight="DemiBold"
+                                   Margin="20,10,0,0"
+                                   HorizontalAlignment="Left" 
+                                   Width="211" 
+                                   Height="34"
+                                   VerticalAlignment="Top"/>
+                        <StackPanel Orientation="Horizontal"  Margin="20,20,0,0">
+                            <TextBox  Style="{StaticResource RoundedTextBoxStyle}"
+                                     x:Name="CountryU"
+                                     Tag="Страна"
+                                     Width="300"
+                                     FontSize="20"
+                                     Height="50" 
+                                     VerticalAlignment="Top"/>
+                            <TextBox Tag="Город"
+                                     Style="{StaticResource RoundedTextBoxStyle}"
+                                     x:Name="CityU"
+                                     Margin="50,0,0,0"
+                                     FontSize="20"
+                                     Width="300"
+                                     Height="50"
+                                     VerticalAlignment="Top"/>
+                            <TextBox Tag="Почтовый индекс"
+                                     Style="{StaticResource RoundedTextBoxStyle}"
+                                     x:Name="PostcodeU" 
+                                     Margin="50,0,0,0"
+                                     FontSize="20"
+                                     Width="300"
+                                     Height="50"
+                                     VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBox Tag="Адрес"
+                                     Style="{StaticResource RoundedTextBoxStyle}"
+                                     x:Name="AddressU"  
+                                     Margin="20,20,0,0"
+                                     FontSize="20"
+                                     Width="300"
+                                     Height="50"
+                                     VerticalAlignment="Top"
+                                     HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="20" Background="#FFECF1FA" Margin="44,40,86,0" Height="160" >
+                    <StackPanel>
+                        <TextBlock Text="Контактная информация"
+                               FontSize="22"
+                                    Margin="20,10,0,0"
+                               Foreground="Black"
+                               FontWeight="DemiBold"
+                               HorizontalAlignment="Left" 
+                               Width="300" 
+                               Height="34" 
+                               VerticalAlignment="Top"/>
+                        <StackPanel Orientation="Horizontal"  Margin="20,20,0,0">
+                            <TextBox Tag="Номер телефона"
+                               x:Name="PhoneNumberU"
+                               Margin="0,0,50,0"
+                               FontSize="20"
+                               Height="50"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Width="300"
+                               Style="{StaticResource RoundedTextBoxStyle}"/>
+                            <TextBox Tag="Электронная почта"
+                                     x:Name="EmailU"
+                                     FontSize="20"
+                                     Height="50"
+                                     VerticalAlignment="Top"
+                                     Width="300"
+                                     Style="{StaticResource RoundedTextBoxStyle}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <StackPanel Orientation="Vertical" Margin="45,20,86,0" Height="100">
+                    <CheckBox Margin="0,0,0,0"
+                              x:Name="ПравилаУчастия"
+                              HorizontalAlignment="Left"
+                              Width="850" 
+                              Height="40" 
+                              VerticalAlignment="Top"
+                              >Правила участия в FlyHawk принимаю. Ознакомлен с политикой конфиденциальности компании и даю согласие на обработку своих персональных данных.</CheckBox>
+                    <Button x:Name="Регистрация" 
+                            Click="Регистрация_Click"
+                            Height="50"
+                            Margin="0,0,0,0" 
+                            FontSize="22"   
+                            Width="300"
+                            Background="#FF51BB46"  
+                            Content="Зарегистрироваться" 
+                            HorizontalAlignment="Left"
+                            Style="{StaticResource RoundedButtonStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

@@ -1,6 +1,6 @@
-﻿using Fly2._0.Admin;
-using Fly2._0.Core;
-using Fly2._0.MVVM.Model;
+﻿using Fly2_0.Admin;
+using Fly2_0.Core;
+using Fly2_0.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 
 
-namespace Fly2._0
+namespace Fly2_0
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -52,7 +52,7 @@ namespace Fly2._0
                 db.SaveChanges();
                 Application.Current.Shutdown();
             }
-            
+
         }
 
         private void Вход_Checked(object sender, RoutedEventArgs e)
@@ -89,7 +89,7 @@ namespace Fly2._0
 
         private void Login()
         {
-            try 
+            try
             {
                 List<Administrator> administrators = db.Administrators.ToList();
 
@@ -133,15 +133,12 @@ namespace Fly2._0
                         MessageBox.Show("Вы зашли в аккаунт");
                     }
                 }
-         
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
-
-
         }
     }
 }

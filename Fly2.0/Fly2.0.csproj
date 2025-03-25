@@ -68,44 +68,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MVVM\ViewModel\BookTicketViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\ChooseFlightViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\ChooseTicketTypeViewModel.cs" />
-    <Compile Include="MVVM\View\BookTicketView.xaml.cs">
-      <DependentUpon>BookTicketView.xaml</DependentUpon>
+    <Compile Include="Migrations\202503251929257_InitialCreatea.cs" />
+    <Compile Include="Migrations\202503251929257_InitialCreatea.Designer.cs">
+      <DependentUpon>202503251929257_InitialCreatea.cs</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\ChooseFlightView.xaml.cs">
+    <Compile Include="MVVM\Views\ChooseFlight\ChooseFlightViewModel.cs" />
+    <Compile Include="MVVM\Views\Address\AddressView.xaml.cs">
+      <DependentUpon>AddressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Views\Address\AddressViewModel.cs" />
+    <Compile Include="MVVM\Views\ChooseFlight\ChooseFlightView.xaml.cs">
       <DependentUpon>ChooseFlightView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\ChooseTicketTypeView.xaml.cs">
-      <DependentUpon>ChooseTicketTypeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserBooking\BookingTicket.xaml.cs">
-      <DependentUpon>BookingTicket.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserBooking\BookTicketWindow.xaml.cs">
-      <DependentUpon>BookTicketWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserBooking\ChooseTicketWindow.xaml.cs">
-      <DependentUpon>ChooseTicketWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserBooking\PrintAirticket.xaml.cs">
+    <Compile Include="Pdfs\PrintAirticket.xaml.cs">
       <DependentUpon>PrintAirticket.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserBooking\PrintBagath.xaml.cs">
+    <Compile Include="Pdfs\PrintBagath.xaml.cs">
       <DependentUpon>PrintBagath.xaml</DependentUpon>
     </Compile>
-    <Page Include="Admin\AdminstratorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="Windows\Admin\AdminstratorWindow.xaml.cs">
+      <DependentUpon>AdminstratorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Tickets\BookingTicket.xaml.cs">
+      <DependentUpon>BookingTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Tickets\BookTicketWindow.xaml.cs">
+      <DependentUpon>BookTicketWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Tickets\ChooseTicketWindow.xaml.cs">
+      <DependentUpon>ChooseTicketWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Admin\AdminstratorWindow.xaml.cs">
-      <DependentUpon>AdminstratorWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -117,87 +113,75 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MVVM\View\AddressView.xaml">
+    <Page Include="MVVM\Views\Address\AddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\Views\ChooseTable\ChooseTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AddView.xaml">
+    <Page Include="MVVM\Views\Aircraft\AircraftView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AircraftView.xaml">
+    <Page Include="MVVM\Views\Airtickets\AirticketsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\AirticketsView.xaml">
+    <Page Include="MVVM\Views\Change\ChangeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\BookingStatusView.xaml">
+    <Page Include="MVVM\Views\Chek-in\Chek-inView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\BookTicketView.xaml">
+    <Page Include="MVVM\Views\ChooseFlight\ChooseFlightView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\ChangeView.xaml">
+    <Page Include="MVVM\Views\Contact\ContactView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\Chek-inView.xaml">
+    <Page Include="MVVM\Views\ReservedTicketsReport\ReservedTicketsReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\ChooseFlightView.xaml">
+    <Page Include="MVVM\Views\Flight\FlightView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\ChooseTicketTypeView.xaml">
+    <Page Include="MVVM\Views\MainWindow\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\ContactView.xaml">
+    <Page Include="MVVM\Views\OrdersView\OrdersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\DeleteView.xaml">
+    <Page Include="MVVM\Views\Passport\PassportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\FlightView.xaml">
+    <Page Include="MVVM\Views\Registration\RegistrationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\MainWindowView.xaml">
+    <Page Include="MVVM\Views\ComplitedFlightsReport\ComplitedFlightsReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\OrdersView.xaml">
+    <Page Include="MVVM\Views\Search\SearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\PassportView.xaml">
+    <Page Include="MVVM\Views\TicketsType\TicketTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\RegistrationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\ReportView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\SearchView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\TicketTypeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MVVM\View\UsersView.xaml">
+    <Page Include="MVVM\Views\User\UsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,113 +221,105 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserBooking\BookingTicket.xaml">
+    <Page Include="Pdfs\PrintAirticket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserBooking\BookTicketWindow.xaml">
+    <Page Include="Pdfs\PrintBagath.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserBooking\ChooseTicketWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\Admin\AdminstratorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserBooking\PrintAirticket.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\Tickets\BookingTicket.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserBooking\PrintBagath.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Windows\Tickets\BookTicketWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Tickets\ChooseTicketWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202206261925091_AddBlogUrl.cs" />
-    <Compile Include="Migrations\202206261925091_AddBlogUrl.designer.cs">
-      <DependentUpon>202206261925091_AddBlogUrl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MVVM\Model\Address.cs" />
-    <Compile Include="MVVM\Model\Administrator.cs" />
-    <Compile Include="MVVM\Model\Aircraft.cs" />
-    <Compile Include="MVVM\Model\Airticket.cs" />
-    <Compile Include="MVVM\Model\Contact.cs" />
-    <Compile Include="MVVM\Model\Flight.cs" />
-    <Compile Include="MVVM\Model\Passport.cs" />
-    <Compile Include="MVVM\Model\TicketType.cs" />
-    <Compile Include="MVVM\Model\User.cs" />
-    <Compile Include="MVVM\ViewModel\AddressViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\AddViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\AircraftViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\AirticketsViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\BookingStatusViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\ChangeViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\Chek-inViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\ContactViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\DeleteViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\FlightViewModel.cs" />
+    <Compile Include="MVVM\Models\Address.cs" />
+    <Compile Include="MVVM\Models\Administrator.cs" />
+    <Compile Include="MVVM\Models\Aircraft.cs" />
+    <Compile Include="MVVM\Models\Airticket.cs" />
+    <Compile Include="MVVM\Models\Contact.cs" />
+    <Compile Include="MVVM\Models\Flight.cs" />
+    <Compile Include="MVVM\Models\Passport.cs" />
+    <Compile Include="MVVM\Models\TicketType.cs" />
+    <Compile Include="MVVM\Models\User.cs" />
+    <Compile Include="MVVM\Views\ChooseTable\ChooseTableViewModel.cs" />
+    <Compile Include="MVVM\Views\Aircraft\AircraftViewModel.cs" />
+    <Compile Include="MVVM\Views\Airtickets\AirticketsViewModel.cs" />
+    <Compile Include="MVVM\Views\Change\ChangeViewModel.cs" />
+    <Compile Include="MVVM\Views\Chek-in\Chek-inViewModel.cs" />
+    <Compile Include="MVVM\Views\Contact\ContactViewModel.cs" />
+    <Compile Include="MVVM\Views\ReservedTicketsReport\ReservedTicketsReportViewModel.cs" />
+    <Compile Include="MVVM\Views\Flight\FlightViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\OrdersViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\PassportViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\RegistrationViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\ReportViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\SearchViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\TicketTypeViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\UsersViewModel.cs" />
-    <Compile Include="MVVM\View\AddressView.xaml.cs">
-      <DependentUpon>AddressView.xaml</DependentUpon>
+    <Compile Include="MVVM\Views\MainWindow\MainWindowViewModel.cs" />
+    <Compile Include="MVVM\Views\OrdersView\OrdersViewModel.cs" />
+    <Compile Include="MVVM\Views\Passport\PassportViewModel.cs" />
+    <Compile Include="MVVM\Views\Registration\RegistrationViewModel.cs" />
+    <Compile Include="MVVM\Views\ComplitedFlightsReport\ComplitedFlightsReportViewModel.cs" />
+    <Compile Include="MVVM\Views\Search\SearchViewModel.cs" />
+    <Compile Include="MVVM\Views\TicketsType\TicketTypeViewModel.cs" />
+    <Compile Include="MVVM\Views\User\UsersViewModel.cs" />
+    <Compile Include="MVVM\Views\ChooseTable\ChooseTableView.xaml.cs">
+      <DependentUpon>ChooseTableView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AddView.xaml.cs">
-      <DependentUpon>AddView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\AircraftView.xaml.cs">
+    <Compile Include="MVVM\Views\Aircraft\AircraftView.xaml.cs">
       <DependentUpon>AircraftView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\AirticketsView.xaml.cs">
+    <Compile Include="MVVM\Views\Airtickets\AirticketsView.xaml.cs">
       <DependentUpon>AirticketsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\BookingStatusView.xaml.cs">
-      <DependentUpon>BookingStatusView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MVVM\View\ChangeView.xaml.cs">
+    <Compile Include="MVVM\Views\Change\ChangeView.xaml.cs">
       <DependentUpon>ChangeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\Chek-inView.xaml.cs">
+    <Compile Include="MVVM\Views\Chek-in\Chek-inView.xaml.cs">
       <DependentUpon>Chek-inView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\ContactView.xaml.cs">
+    <Compile Include="MVVM\Views\Contact\ContactView.xaml.cs">
       <DependentUpon>ContactView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\DeleteView.xaml.cs">
-      <DependentUpon>DeleteView.xaml</DependentUpon>
+    <Compile Include="MVVM\Views\ReservedTicketsReport\ReservedTicketsReportView.xaml.cs">
+      <DependentUpon>ReservedTicketsReportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\FlightView.xaml.cs">
+    <Compile Include="MVVM\Views\Flight\FlightView.xaml.cs">
       <DependentUpon>FlightView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\MainWindowView.xaml.cs">
+    <Compile Include="MVVM\Views\MainWindow\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\OrdersView.xaml.cs">
+    <Compile Include="MVVM\Views\OrdersView\OrdersView.xaml.cs">
       <DependentUpon>OrdersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\PassportView.xaml.cs">
+    <Compile Include="MVVM\Views\Passport\PassportView.xaml.cs">
       <DependentUpon>PassportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\RegistrationView.xaml.cs">
+    <Compile Include="MVVM\Views\Registration\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\ReportView.xaml.cs">
-      <DependentUpon>ReportView.xaml</DependentUpon>
+    <Compile Include="MVVM\Views\ComplitedFlightsReport\ComplitedFlightsReportView.xaml.cs">
+      <DependentUpon>ComplitedFlightsReportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\SearchView.xaml.cs">
+    <Compile Include="MVVM\Views\Search\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\TicketTypeView.xaml.cs">
+    <Compile Include="MVVM\Views\TicketsType\TicketTypeView.xaml.cs">
       <DependentUpon>TicketTypeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\UsersView.xaml.cs">
+    <Compile Include="MVVM\Views\User\UsersView.xaml.cs">
       <DependentUpon>UsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -359,8 +335,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202206261925091_AddBlogUrl.resx">
-      <DependentUpon>202206261925091_AddBlogUrl.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202503251929257_InitialCreatea.resx">
+      <DependentUpon>202503251929257_InitialCreatea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -378,6 +354,7 @@
   <ItemGroup>
     <Resource Include="barcode.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

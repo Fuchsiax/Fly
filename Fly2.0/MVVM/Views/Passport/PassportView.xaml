@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Fly2_0.MVVM.View.PassportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Fly2_0.MVVM.View"
+             xmlns:core="clr-namespace:Fly2_0.Core" d:DataContext="{d:DesignInstance Type=core:ApplicationViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1210">
+    <StackPanel>
+        <ToolBar Height="40" >
+            <Button x:Name="Add" Width="100" Height="40"  Command="{Binding AddPassportCommand }" Content="Добавить"/>
+            <Button x:Name="Change" Width="100" Height="40"  Command="{Binding EditPassportCommand }" Content="Обновить"/>
+            <Button x:Name="Remove" Width="100" Height="40"  Command="{Binding DeletePassportCommand }" Content="Удалить" Margin="0,0,670,0"/>
+            <TextBox x:Name="Search" Width="200" Height="25" Tag="Поиск" HorizontalAlignment="Left" Padding="4" Style="{StaticResource RoundedTextBoxStyle}" TextChanged="Search_TextChanged"/>
+        </ToolBar>
+        <DataGrid  AutoGenerateColumns="False" x:Name="aircraftsGrid" Height="auto" ItemsSource="{Binding  Passportlist, UpdateSourceTrigger=PropertyChanged, IsAsync=True}"  SelectedItem="{Binding SelectedPassport}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding IdPassport, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Header="№" Width="40"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Nationality, UpdateSourceTrigger=PropertyChanged}" Header="Национальность" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Number, UpdateSourceTrigger=PropertyChanged}" Header="Номер паспорта" Width="130"></DataGridTextColumn>
+                <DataGridTemplateColumn  Header="Срок действия" Width="130">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Validity, UpdateSourceTrigger=PropertyChanged, StringFormat=dd.MM.yy}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Validity}" x:Name="СрокДействия" CalendarOpened="СрокДействия_CalendarOpened"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

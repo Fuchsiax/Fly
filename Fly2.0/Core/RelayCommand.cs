@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Fly2._0.Core
+namespace Fly2_0.Core
 {
     class RelayCommand : ICommand
     {

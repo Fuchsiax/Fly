@@ -1,0 +1,131 @@
+﻿<Window x:Class="Fly2_0.UserBooking.PrintAirticket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fly2_0.UserBooking"
+        mc:Ignorable="d"
+        Title="PrintAirticket" Height="600" Width="600"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        
+        <StackPanel Orientation="Vertical">
+            <ToolBar Height="30" >
+                <Button Command="" x:Name="Печать" Click="Печать_Click">Распечатать билет</Button>
+                <Button Command="" x:Name="Багаж" Click="Багаж_Click">Багажная квитанция</Button>
+            </ToolBar>
+            <StackPanel Orientation="Vertical" x:Name="Билет">
+                <StackPanel  Orientation="Horizontal">
+                    <RichTextBox Height="auto" Width="300" IsReadOnly="True" Margin="20,20,0,0" BorderThickness="0">
+                        <FlowDocument>
+                            <Section>
+                                <Paragraph FontSize="30" FontWeight="DemiBold">
+                                    Маршрутная квитанция
+                                </Paragraph>
+                                <Paragraph Foreground="Gray">ELECTRONIC TICKET/ITINERARY RECEIPT</Paragraph>
+                                <Paragraph FontWeight="DemiBold" FontSize="15">Данные полёта</Paragraph>
+                            </Section>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <RichTextBox Height="auto" Width="150" IsReadOnly="True" Margin="100,20,0,0" Padding="0,10,0,0" BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph FontSize="11">
+                                НОМЕР ВАШЕГО БИЛЕТА:
+                            </Paragraph>
+                            <Paragraph FontWeight="DemiBold" x:Name="НомерБилета">
+
+                            </Paragraph>
+                            <Paragraph FontSize="11">
+                                МЕСТО В САМОЛЕТЕ:
+                            </Paragraph>
+                            <Paragraph FontWeight="DemiBold" x:Name="Место">
+
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </StackPanel>
+                <Separator Margin="10,10,10,0" Height="2" Background="LightGray"></Separator>
+                <StackPanel Orientation="Horizontal">
+                    <RichTextBox  Margin="20,10,20,0" Height="auto" IsReadOnly="True" Width="100"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                ПАССАЖИР
+                            </Paragraph>
+                            <Paragraph FontWeight="DemiBold" x:Name="Пассажир">
+
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <RichTextBox Height="auto" Width="100" Margin="20,10,20,0" IsReadOnly="True"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                ПАСПОРТ
+                            </Paragraph>
+                            <Paragraph  FontWeight="DemiBold" x:Name="Паспорт">
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </StackPanel>
+                <RichTextBox  Margin="10,10,10,0" FontWeight="DemiBold" IsReadOnly="True" FontSize="15"  BorderThickness="0">
+                    <FlowDocument>
+                        <Paragraph>
+                            Информация  о маршруте
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <Separator Margin="10,10,10,0" Height="2" Background="LightGray"></Separator>
+                <StackPanel Orientation="Horizontal">
+                    <RichTextBox  Margin="20,10,20,0" Height="auto" IsReadOnly="True" Width="100"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                РЕЙС
+                            </Paragraph>
+                            <Paragraph  x:Name="НомерРейса">
+                            </Paragraph>
+                            <Paragraph x:Name="Перевозчик" Foreground="Gray"></Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <RichTextBox Height="auto" Width="100" IsReadOnly="True" Margin="20,10,20,0"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                ВЫЛЕТ
+                            </Paragraph>
+                            <Paragraph  FontWeight="DemiBold" x:Name="ВылетДата">
+                            </Paragraph>
+                            <Paragraph  FontWeight="DemiBold" x:Name="ВылетАэропорт">
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <RichTextBox Height="auto"  IsReadOnly="True" Width="100" Margin="20,10,20,0"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                В ПУТИ
+                            </Paragraph>
+                            <Paragraph  Foreground="Gray" x:Name="ВПути">
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <RichTextBox Height="auto" Width="100" Margin="20,10,20,0" IsReadOnly="True"  BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph Foreground="Gray">
+                                ПРИБЫТИЕ
+                            </Paragraph>
+                            <Paragraph  FontWeight="DemiBold" x:Name="ПрибытиеДата">
+                            </Paragraph>
+                            <Paragraph  FontWeight="DemiBold" x:Name="ПрибытиеАэропорт">
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </StackPanel>
+                <Separator Margin="10,10,10,0" Height="2" Background="LightGray"></Separator>
+                <RichTextBox BorderThickness="0" IsReadOnly="True" Margin="0,0,0,60">
+                    <FlowDocument >
+                        <Paragraph TextAlignment="Center">
+                            © FlyHawk 
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

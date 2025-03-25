@@ -1,10 +1,10 @@
-﻿<Window x:Class="Fly2._0.MainWindow"
+﻿<Window x:Class="Fly2_0.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Fly2._0"
-        xmlns:viewModel="clr-namespace:Fly2._0.MVVM.ViewModel"
+        xmlns:local="clr-namespace:Fly2_0"
+        xmlns:viewModel="clr-namespace:Fly2_0.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="Fly" Height="810" Width="1210" WindowStyle="None"  ResizeMode="NoResize" Background="{x:Null}"  WindowStartupLocation="CenterScreen" AllowsTransparency="True" MouseDown="Window_MouseDown" x:Name="Window">
     <Window.DataContext>

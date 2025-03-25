@@ -1,20 +1,11 @@
-﻿using Fly2._0.Core;
-using Fly2._0.MVVM.Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
+﻿using Fly2_0.Core;
 
-namespace Fly2._0.MVVM.ViewModel
+namespace Fly2_0.MVVM.ViewModel
 {
-    class MainViewModel:ApplicationViewModel
+    class MainViewModel : ApplicationViewModel
     {
         public RelayCommand MainWindowViewCommand { get; set; }
-        
+
 
         public MainWindowViewModel MainWindowVm { get; set; }
 
@@ -25,7 +16,6 @@ namespace Fly2._0.MVVM.ViewModel
         public RelayCommand BookingStatusViewCommand { get; set; }
         public RelayCommand CheckinViewCommand { get; set; }
         public SearchViewModel SearchVm { get; set; }
-        public BookingStatusViewModel BookingStatusVm { get; set; }
         public Chek_inViewModel CheckinVm { get; set; }
         /// <summary>
         /// /////////
@@ -45,17 +35,17 @@ namespace Fly2._0.MVVM.ViewModel
         public RelayCommand OrdersViewCommand { get; set; }
 
 
-        public AddViewModel AddVm { get; set; }
-        public DeleteViewModel DeleteVm { get; set; }
+        public ChooseTableViewModel AddVm { get; set; }
+        public ReservedTicketsReportViewModel DeleteVm { get; set; }
         public ChangeViewModel ChangeVm { get; set; }
-        public ReportViewModel ReportVm { get; set; }
+        public ComplitedFlightsReportViewModel ReportVm { get; set; }
         public OrdersViewModel OrdersVm { get; set; }
         /// <summary>
         /// ///
         /// </summary>
 
         public RelayCommand AircraftViewCommand { get; set; }
-        public RelayCommand AirticketsViewCommand { get; set; }        
+        public RelayCommand AirticketsViewCommand { get; set; }
         public RelayCommand FlightViewCommand { get; set; }
         public RelayCommand TicketTypeViewCommand { get; set; }
         public RelayCommand UsersViewCommand { get; set; }
@@ -63,7 +53,7 @@ namespace Fly2._0.MVVM.ViewModel
         public RelayCommand ContactViewCommand { get; set; }
         public RelayCommand AddressViewCommand { get; set; }
         public AircraftViewModel AircraftVm { get; set; }
-        public AirticketsViewModel AirticketsVm { get; set; }       
+        public AirticketsViewModel AirticketsVm { get; set; }
         public FlightViewModel FlightVm { get; set; }
         public TicketTypeViewModel TicketTypeVm { get; set; }
         public UsersViewModel UsersVm { get; set; }
@@ -81,8 +71,6 @@ namespace Fly2._0.MVVM.ViewModel
         public RelayCommand BookingTicketViewCommand { get; set; }
 
         public ChooseFlightViewModel ChooseFlightVm { get; set; }
-        public ChooseTicketTypeViewModel ChooseTicketTypeVm { get; set; }
-        public BookTicketViewModel BookingTicketVm { get; set; }
 
         private object _currentView;
 
@@ -94,7 +82,7 @@ namespace Fly2._0.MVVM.ViewModel
                 _currentView = value;
                 OnPropertyChanged();
             }
-        }       
+        }
 
         private object _currentViewSearch;
 
@@ -106,8 +94,8 @@ namespace Fly2._0.MVVM.ViewModel
                 _currentViewSearch = value;
                 OnPropertyChanged();
             }
-        }        
-        
+        }
+
         private object _currentViewAdmin;
 
         public object CurrentViewAdmin
@@ -118,8 +106,8 @@ namespace Fly2._0.MVVM.ViewModel
                 _currentViewAdmin = value;
                 OnPropertyChanged();
             }
-        }        
-        
+        }
+
         private object _currentViewTable;
 
         public object CurrentViewTable
@@ -130,8 +118,8 @@ namespace Fly2._0.MVVM.ViewModel
                 _currentViewTable = value;
                 OnPropertyChanged();
             }
-        }       
-        
+        }
+
         private object _currentViewUser;
 
         public object CurrentViewUser
@@ -142,8 +130,8 @@ namespace Fly2._0.MVVM.ViewModel
                 _currentViewUser = value;
                 OnPropertyChanged();
             }
-        }       
-        
+        }
+
         private object _currentViewBooking;
 
         public object CurrentViewBooking
@@ -164,14 +152,13 @@ namespace Fly2._0.MVVM.ViewModel
             CurrentView = MainWindowVm;
             ///////////////////
             SearchVm = new SearchViewModel();
-            BookingStatusVm = new BookingStatusViewModel();
             CheckinVm = new Chek_inViewModel();
             CurrentViewSearch = SearchVm;
             //////////////////
-            AddVm = new AddViewModel();
-            DeleteVm = new DeleteViewModel();
+            AddVm = new ChooseTableViewModel();
+            DeleteVm = new ReservedTicketsReportViewModel();
             ChangeVm = new ChangeViewModel();
-            ReportVm = new ReportViewModel();
+            ReportVm = new ComplitedFlightsReportViewModel();
             OrdersVm = new OrdersViewModel();
             CurrentViewAdmin = ReportVm;
             //////////////////
@@ -188,15 +175,13 @@ namespace Fly2._0.MVVM.ViewModel
             CurrentViewUser = UsersVm;
             ////////////////////
             ChooseFlightVm = new ChooseFlightViewModel();
-            ChooseTicketTypeVm = new ChooseTicketTypeViewModel();
-            BookingTicketVm = new BookTicketViewModel();
             CurrentViewBooking = ChooseFlightVm;
 
             MainWindowViewCommand = new RelayCommand(o =>
             {
                 CurrentView = MainWindowVm;
             }
-         );            
+         );
             RegistrationViewCommand = new RelayCommand(o =>
             {
                 CurrentView = RegistrationVm;
@@ -208,12 +193,8 @@ namespace Fly2._0.MVVM.ViewModel
             {
                 CurrentViewSearch = SearchVm;
             }
-         );           
-            BookingStatusViewCommand = new RelayCommand(o =>
-            {
-                CurrentViewSearch = BookingStatusVm;
-            }
-         );            
+         );
+
             CheckinViewCommand = new RelayCommand(o =>
             {
                 CurrentViewSearch = CheckinVm;
@@ -225,22 +206,22 @@ namespace Fly2._0.MVVM.ViewModel
             {
                 CurrentViewAdmin = AddVm;
             }
-);            
+);
             DeleteViewCommand = new RelayCommand(o =>
             {
                 CurrentViewAdmin = DeleteVm;
             }
-);            
+);
             ChangeViewCommand = new RelayCommand(o =>
             {
                 CurrentViewAdmin = ChangeVm;
             }
-);            
+);
             ReportViewCommand = new RelayCommand(o =>
             {
                 CurrentViewAdmin = ReportVm;
             }
-);            
+);
             OrdersViewCommand = new RelayCommand(o =>
             {
                 CurrentViewAdmin = OrdersVm;
@@ -258,24 +239,24 @@ namespace Fly2._0.MVVM.ViewModel
             {
                 CurrentViewTable = AirticketsVm;
             }
-);            
+);
             FlightViewCommand = new RelayCommand(o =>
             {
                 CurrentViewTable = FlightVm;
             }
-);            
+);
             TicketTypeViewCommand = new RelayCommand(o =>
             {
                 CurrentViewTable = TicketTypeVm;
             }
-);            
+);
 
             /////////////////////
             UsersViewCommand = new RelayCommand(o =>
             {
                 CurrentViewUser = UsersVm;
             }
-);    
+);
             ContactViewCommand = new RelayCommand(o =>
             {
                 CurrentViewUser = ContactVm;
@@ -297,16 +278,6 @@ namespace Fly2._0.MVVM.ViewModel
             ChooseFlightViewCommand = new RelayCommand(o =>
             {
                 CurrentViewBooking = ChooseFlightVm;
-            }
-);
-            ChooseTicketTypeViewCommand = new RelayCommand(o =>
-            {
-                CurrentViewBooking = ChooseTicketTypeVm;
-            }
-);
-            BookingTicketViewCommand = new RelayCommand(o =>
-            {
-                CurrentViewBooking = BookingTicketVm;
             }
 );
         }

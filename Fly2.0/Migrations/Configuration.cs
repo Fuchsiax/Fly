@@ -1,18 +1,15 @@
-﻿namespace Fly2._0.Migrations
+﻿namespace Fly2_0.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Fly2._0.Core.ApplicationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Fly2_0.Core.ApplicationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Fly2._0.Core.ApplicationContext context)
+        protected override void Seed(Fly2_0.Core.ApplicationContext context)
         {
             //  This method will be called after migrating to the latest version.
 
