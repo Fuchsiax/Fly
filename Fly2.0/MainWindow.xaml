@@ -1,0 +1,207 @@
+﻿<Window x:Class="Fly2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fly2._0"
+        xmlns:viewModel="clr-namespace:Fly2._0.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="Fly" Height="810" Width="1210" WindowStyle="None"  ResizeMode="NoResize" Background="{x:Null}"  WindowStartupLocation="CenterScreen" AllowsTransparency="True" MouseDown="Window_MouseDown" x:Name="Window">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border CornerRadius="20" Background="White" BorderThickness="1" BorderBrush="#FFB9B8B8">
+        <Grid HorizontalAlignment="Right" Width="1210" Height="1194" VerticalAlignment="Top" Margin="0,0,0,-385">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="89" />
+                <RowDefinition Height="401*"/>
+                <RowDefinition Height="704*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="LightGray" BorderThickness="0,0,0,1">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Content="FlyHawk"
+                            x:Name="Главная"                
+                            Width="290"
+                            Margin="100,0,0,0"
+                            Background="Transparent"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            GroupName="Navigation"
+                            Cursor="Hand"
+                            Command="{Binding MainWindowViewCommand}"
+                            Checked="Главная_Checked">
+                        <RadioButton.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock  FontSize="48" FontWeight="Normal"  Text="FlyHawk" Foreground="#FF455CC7"   >
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+
+                    <RadioButton Content="Регистрация"
+                            Background="Transparent"
+                                  Cursor="Hand"
+                                     Foreground="#FF455CC7"
+                            x:Name="Регистрация"
+                            FontSize="26"                            
+                            FontWeight="DemiBold"         
+                            Width="195"
+                            Margin="420,0,0,0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            GroupName="Navigation"
+                            Command="{Binding RegistrationViewCommand}"
+                            Checked="Регистрация_Checked">
+                        <RadioButton.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock  FontSize="26" FontWeight="DemiBold"  Text="Регистрация" Foreground="#FF455CC7"   >
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <RadioButton Content="Вход"     
+                                  Cursor="Hand"
+                            Background="Transparent"
+                                     Foreground="#FF455CC7"
+                            x:Name="Вход"
+                            FontSize="26"                            
+                            FontWeight="DemiBold"                        
+                            Width="90"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            GroupName="Login"
+                            Checked="Вход_Checked"
+                            Unchecked="Вход_Unchecked">
+                        <RadioButton.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <TextBlock  FontSize="26" FontWeight="DemiBold"  Text="Вход" Foreground="#FF455CC7"   >
+
+                                    </TextBlock>
+                                </Grid>
+                            </ControlTemplate>
+                        </RadioButton.Template>
+                    </RadioButton>
+                    <Button  x:Name="ButtonMinimize"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Background="Transparent"
+                            Click="ButtonMinimize_Click"
+                            Content="▔" 
+                            Foreground="#FF151515"
+                            FontSize="18"
+                            FontFamily="Showcard Gothic"
+                            Padding="20,0,0,30"
+                            Width="55"
+                            Style="{StaticResource ButtonStyle}"/>
+                    <Button x:Name="ButtonClose"
+                            Background="Transparent"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Content="╳" 
+                            Padding="20,0,0,50"
+                            Foreground="#FF131212" 
+                            FontWeight="Bold" 
+                            Click="ButtonClose_Click" 
+                            Width="55"
+                            Style="{StaticResource ButtonStyle}"/>
+                </StackPanel>
+            </Border>
+            <StackPanel Margin="0,0,0,388" Grid.RowSpan="2" Grid.Row="1">
+                <ContentControl Content="{Binding CurrentView}" Height="810" Width="1210"   />
+            </StackPanel>
+            <Border x:Name="ПоказатьМеню"
+                    Margin="940,84,17,161"
+                    Grid.RowSpan="2"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Visibility="Hidden"
+                    CornerRadius="8"
+                    Background="White"
+                    Width="250"
+                    >
+                <Grid>
+                    <Border Background="White" BorderThickness="1" BorderBrush="Gray" Margin="0,-8,123,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="30" Height="31" VerticalAlignment="Top">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="46.488"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <Grid Background="White" Margin="10,0,10,203"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="196*"/>
+                            <ColumnDefinition Width="85*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Background="Transparent"
+                                   Text="Войти"
+                                   Margin="0,10,43,0"
+                                   Grid.ColumnSpan="2"
+                                   FontSize="18"
+                                   FontWeight="DemiBold" HorizontalAlignment="Right" Width="196" Height="27" VerticalAlignment="Top"/>
+                        <TextBox Margin="0,42,10,0"
+                                 Height="40"
+                                 Tag="Номер участника"
+                                 x:Name="UserNumber"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Grid.ColumnSpan="2"
+                                 Width="229"
+                                 VerticalAlignment="Top"/>
+                        <TextBox Margin="0,100,10,0"
+                                 Height="40"
+                                 Tag="Пароль"
+                                 x:Name="Password"
+                                 Style="{StaticResource RoundedTextBoxStyle}"
+                                 Grid.ColumnSpan="2"
+                                 Width="229"
+                                 VerticalAlignment="Top"/>
+                        <CheckBox Height="30" Margin="10,100,0,0" Content="Вход администратора" x:Name="AdminLogin" >
+                            
+                        </CheckBox>
+                        <Button Background="#FF5587E3"
+                                Height="40" Margin="0,190,42,0"
+                                BorderBrush="{x:Null}"
+                                Content="Войти"
+                                x:Name="Войти"
+                                HorizontalAlignment="Right"
+                                Width="122"
+                                Style="{StaticResource RoundedButtonStyle}"
+                                VerticalAlignment="Top"
+                                Click="Войти_Click"/>
+
+                        <RadioButton Foreground="#FF3C73D8"
+                                x:Name="Зарегистрироваться"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Content="Регистрация" Grid.ColumnSpan="2"
+                                FontSize="12"
+                                FontWeight="Normal" Width="102" Height="22"
+                                Margin="140,200,10,10"
+                                GroupName="Navigation"
+                                Command="{Binding RegistrationViewCommand}">
+                        </RadioButton>
+                        <Button x:Name="ButtonCloseLogin"
+                            Background="Transparent"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Content="╳" 
+                            Padding="20,0,0,50"
+                            Foreground="#FF131212" 
+                            FontWeight="Bold" 
+                            Click="ButtonCloseLogin_Click" 
+                            Width="33"
+                            Style="{StaticResource ButtonStyle}" Grid.Column="1" Margin="32,10,0,206" Height="27"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

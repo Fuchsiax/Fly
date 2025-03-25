@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF685671-D7C7-48D0-8278-631FD40E2935}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Fly2._0</RootNamespace>
+    <AssemblyName>Fly2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="MVVM\ViewModel\BookTicketViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ChooseFlightViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ChooseTicketTypeViewModel.cs" />
+    <Compile Include="MVVM\View\BookTicketView.xaml.cs">
+      <DependentUpon>BookTicketView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ChooseFlightView.xaml.cs">
+      <DependentUpon>ChooseFlightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ChooseTicketTypeView.xaml.cs">
+      <DependentUpon>ChooseTicketTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBooking\BookingTicket.xaml.cs">
+      <DependentUpon>BookingTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBooking\BookTicketWindow.xaml.cs">
+      <DependentUpon>BookTicketWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBooking\ChooseTicketWindow.xaml.cs">
+      <DependentUpon>ChooseTicketWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBooking\PrintAirticket.xaml.cs">
+      <DependentUpon>PrintAirticket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBooking\PrintBagath.xaml.cs">
+      <DependentUpon>PrintBagath.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Admin\AdminstratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Admin\AdminstratorWindow.xaml.cs">
+      <DependentUpon>AdminstratorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ApplicationContext.cs" />
+    <Compile Include="Core\ApplicationViewModel.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MVVM\View\AddressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AircraftView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AirticketsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\BookingStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\BookTicketView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Chek-inView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ChooseFlightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ChooseTicketTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ContactView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\DeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\FlightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\OrdersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\PassportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\RegistrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\TicketTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\DatePickerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\GridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\RoundedButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\RoundedTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ScrollViewerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ToolBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBooking\BookingTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBooking\BookTicketWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBooking\ChooseTicketWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBooking\PrintAirticket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBooking\PrintBagath.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\202206261925091_AddBlogUrl.cs" />
+    <Compile Include="Migrations\202206261925091_AddBlogUrl.designer.cs">
+      <DependentUpon>202206261925091_AddBlogUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MVVM\Model\Address.cs" />
+    <Compile Include="MVVM\Model\Administrator.cs" />
+    <Compile Include="MVVM\Model\Aircraft.cs" />
+    <Compile Include="MVVM\Model\Airticket.cs" />
+    <Compile Include="MVVM\Model\Contact.cs" />
+    <Compile Include="MVVM\Model\Flight.cs" />
+    <Compile Include="MVVM\Model\Passport.cs" />
+    <Compile Include="MVVM\Model\TicketType.cs" />
+    <Compile Include="MVVM\Model\User.cs" />
+    <Compile Include="MVVM\ViewModel\AddressViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\AddViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\AircraftViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\AirticketsViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\BookingStatusViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ChangeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\Chek-inViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ContactViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\DeleteViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\FlightViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\OrdersViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\PassportViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ReportViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SearchViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\TicketTypeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\UsersViewModel.cs" />
+    <Compile Include="MVVM\View\AddressView.xaml.cs">
+      <DependentUpon>AddressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddView.xaml.cs">
+      <DependentUpon>AddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AircraftView.xaml.cs">
+      <DependentUpon>AircraftView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AirticketsView.xaml.cs">
+      <DependentUpon>AirticketsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\BookingStatusView.xaml.cs">
+      <DependentUpon>BookingStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ChangeView.xaml.cs">
+      <DependentUpon>ChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Chek-inView.xaml.cs">
+      <DependentUpon>Chek-inView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ContactView.xaml.cs">
+      <DependentUpon>ContactView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DeleteView.xaml.cs">
+      <DependentUpon>DeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\FlightView.xaml.cs">
+      <DependentUpon>FlightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\OrdersView.xaml.cs">
+      <DependentUpon>OrdersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PassportView.xaml.cs">
+      <DependentUpon>PassportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\RegistrationView.xaml.cs">
+      <DependentUpon>RegistrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ReportView.xaml.cs">
+      <DependentUpon>ReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\TicketTypeView.xaml.cs">
+      <DependentUpon>TicketTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202206261925091_AddBlogUrl.resx">
+      <DependentUpon>202206261925091_AddBlogUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="barcode.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

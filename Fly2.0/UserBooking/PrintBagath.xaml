@@ -1,0 +1,47 @@
+﻿<Window x:Class="Fly2._0.UserBooking.PrintBagath"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fly2._0.UserBooking"
+        mc:Ignorable="d"
+        Title="PrintBagath" Height="250" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <StackPanel Orientation="Vertical">
+            <ToolBar Height="30" >
+                <Button  x:Name="Печать" Click="Печать_Click">Распечатать</Button>
+            </ToolBar>
+            <StackPanel Orientation="Vertical" x:Name="Билет">
+                <StackPanel  Orientation="Horizontal">
+                    <RichTextBox Height="auto" Width="300" IsReadOnly="True" Margin="20,20,0,0" BorderThickness="0">
+                        <FlowDocument>
+                            <Section>
+                                <Paragraph FontSize="30" FontWeight="DemiBold">
+                                    Багажная квитанция
+                                </Paragraph>
+                                <Paragraph Foreground="Gray">ELECTRONIC TICKET/ITINERARY RECEIPT</Paragraph>
+                            </Section>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Image Source="D:\Новая папка\C#\Fly2.0\Fly2.0\barcode.png"></Image>
+                    <RichTextBox Height="auto" Width="250" IsReadOnly="True" Margin="10,20,0,0" Padding="0,10,0,0" BorderThickness="0">
+                        <FlowDocument>
+                            <Paragraph FontWeight="DemiBold" x:Name="Фамилия" FontSize="15" TextAlignment="Center">
+
+                            </Paragraph>
+                            <Paragraph FontSize="15" FontWeight="DemiBold"  x:Name="Класс" TextAlignment="Center">
+
+                            </Paragraph>
+                            <Paragraph x:Name="Прибытие"  FontWeight="DemiBold"  FontSize="15" TextAlignment="Center">
+    
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </StackPanel>
+                <Separator Margin="10,10,10,30" Height="2" Background="LightGray"></Separator>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
